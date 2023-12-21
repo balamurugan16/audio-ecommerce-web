@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from "../assets/385172.jpg";
+import image from "../../assets/385172.jpg";
 
 type Props = {
 	size: "small" | "large";

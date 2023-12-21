@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FeatherIcon from "./FeatherIcon";
+import FeatherIcon from "../ui/FeatherIcon";
 
 export default function Title() {
 	return (
