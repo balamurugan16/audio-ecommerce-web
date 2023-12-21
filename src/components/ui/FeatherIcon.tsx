@@ -1,4 +1,5 @@
 import feather from "feather-icons";
+import { useEffect } from "react";
 
 export type FeatherIcons = keyof typeof feather.icons;
 
@@ -8,11 +9,9 @@ export type Props = {
 };
 
 export default function FeatherIcon({ icon, fill }: Props) {
-	const innerHTML = feather.icons[icon].toSvg();
-	return (
-		<i
-			dangerouslySetInnerHTML={{ __html: innerHTML }}
-			style={{ color: fill }}
-		></i>
-	);
+	useEffect(() => {
+		feather.replace();
+	}, []);
+
+	return <i data-feather={icon} style={{ color: fill }}></i>;
 }
