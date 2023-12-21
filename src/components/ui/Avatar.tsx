@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import image from "../../assets/385172.jpg";
 
 type Props = {
 	size: "small" | "large";
+	src: string;
 };
 
 const SizeChart = {
@@ -18,7 +18,9 @@ const SizeChart = {
 
 export default function Avatar(props: Props) {
 	const size = SizeChart[props.size];
-	return <StyledAvatar src={image} width={size.width} height={size.height} />;
+	return (
+		<StyledAvatar src={props.src} width={size.width} height={size.height} />
+	);
 }
 
 const StyledAvatar = styled.img`

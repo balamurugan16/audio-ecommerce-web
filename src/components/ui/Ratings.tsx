@@ -1,36 +1,27 @@
-import starFilled from "../../assets/star-filled.svg";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import starOutlined from "../../assets/star-outlined.svg";
-import { MouseEventHandler, useEffect, useState } from "react";
+import Star from "./Star";
 
-type RatingsProp = {
+type UneditableRatingsProp = {
 	stars: number;
+	editable?: false;
+};
+type EditableRatingsProp = {
+	stars: number;
+	editable?: true;
 	onChange: (stars: number) => void;
 };
 
-type StarProp = {
-	filled?: boolean;
-	onClick: MouseEventHandler;
-};
-
-function Star({ filled = false, onClick }: StarProp) {
-	return (
-		<img
-			onClick={onClick}
-			src={filled ? starFilled : starOutlined}
-			alt="ratings star"
-			width={24}
-			height={24}
-		/>
-	);
-}
+type RatingsProp = EditableRatingsProp | UneditableRatingsProp;
 
 export default function Ratings(props: RatingsProp) {
 	const [stars, setStars] = useState(props.stars);
 
 	useEffect(() => {
-		props.onChange(stars);
-	}, [stars]);
+		if (props.editable) {
+			props.onChange(stars);
+		}
+	}, [stars, props]);
 
 	return (
 		<StyledRating className="rating">
@@ -40,9 +31,8 @@ export default function Ratings(props: RatingsProp) {
 					<Star
 						key={id}
 						filled={id + 1 <= stars}
-						onClick={() => {
-							setStars(id + 1);
-						}}
+						onClick={props.editable ? () => setStars(id + 1) : undefined}
+						clickable={props.editable}
 					/>
 				))}
 		</StyledRating>
@@ -52,7 +42,4 @@ export default function Ratings(props: RatingsProp) {
 const StyledRating = styled.div`
 	display: flex;
 	gap: 0.5rem;
-	img {
-		cursor: pointer;
-	}
 `;

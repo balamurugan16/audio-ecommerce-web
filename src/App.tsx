@@ -1,20 +1,15 @@
-import { useState } from "react";
-import Avatar from "./components/ui/Avatar";
-import Button from "./components/ui/Button";
-import Ratings from "./components/ui/Ratings";
-import Title from "./components/composite/Title";
-import Badge from "./components/ui/Badge";
+import Review from "./components/composite/Review";
+import image from "./assets/385172.jpg";
 
 function App() {
-	const [stars, setStars] = useState(3);
 	return (
-		<>
-			<Avatar size="small" />
-			<Title />
-			<Ratings stars={stars} onChange={setStars} />
-			<Button icon="circle">Add To Cart</Button>
-			<Badge title="Headphone" filled />
-		</>
+		<Review
+			avatarSrc={image}
+			username="Hinata"
+			lastPosted="1 month ago"
+			description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque id quo consectetur error autem porro esse vero natus perspiciatis deleniti?"
+			ratings={4}
+		/>
 	);
 }
 
