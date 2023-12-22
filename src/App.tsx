@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
-import image from "./assets/headphones.png";
-import CartItem from "./components/composite/CartItem";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+	ExploreProducts,
+	Home,
+	ProductDetails,
+	Profile,
+	Search,
+	ShoppingCart,
+	Signin,
+	Signup,
+} from "./pages";
 
 function App() {
-	const [quantity, setQuantity] = useState(0);
-
-	useEffect(() => {
-		console.log(quantity);
-	}, [quantity]);
-
 	return (
-		<div style={{ margin: "2rem 4rem" }}>
-			<CartItem
-				img={image}
-				price="USD 350"
-				quantity={quantity}
-				title="TMA-2 HD Wireless"
-				onChange={(q) => setQuantity(q)}
-			/>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/signin" element={<Signin />} />
+				<Route path="/signup" element={<Signup />} />
+				<Route path="/" element={<Home />} />
+				<Route path="/profile" element={<Profile />} />
+				<Route path="/search" element={<Search />} />
+				<Route path="/explore" element={<ExploreProducts />} />
+				<Route path="/product" element={<ProductDetails />} />
+				<Route path="/shopping-cart" element={<ShoppingCart />} />
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
