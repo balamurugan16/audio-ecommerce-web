@@ -1,13 +1,24 @@
 import styled from "styled-components";
 import FeatherIcon from "../ui/FeatherIcon";
+import { useEffect, useState } from "react";
 
 type Props = {
 	title: string;
 	img: string;
 	price: string;
+	quantity: number;
+	onChange?: (qty: number) => void;
 };
 
-function CartItem({ img, title, price }: Props) {
+function CartItem({ img, title, price, quantity: qty, onChange }: Props) {
+	const [quantity, setQuantity] = useState(qty);
+
+	useEffect(() => {
+		if (onChange) {
+			onChange(quantity);
+		}
+	}, [quantity, onChange]);
+
 	return (
 		<Wrapper>
 			<img src={img} alt={title} />
@@ -16,11 +27,15 @@ function CartItem({ img, title, price }: Props) {
 				<h4 className="price">{price}</h4>
 				<div className="footer">
 					<div className="quantity">
-						<button>
+						<button
+							disabled={quantity <= 0}
+							type="button"
+							onClick={() => setQuantity((s) => s - 1)}
+						>
 							<FeatherIcon icon="minus" />
 						</button>
-						<span>{1}</span>
-						<button>
+						<span>{quantity}</span>
+						<button type="button" onClick={() => setQuantity((s) => s + 1)}>
 							<FeatherIcon icon="plus" />
 						</button>
 					</div>
@@ -70,6 +85,7 @@ const Wrapper = styled.div`
 			gap: 2.5rem;
 			span {
 				font-size: 1.5rem;
+				width: 1ch;
 			}
 			button {
 				background-color: transparent;
