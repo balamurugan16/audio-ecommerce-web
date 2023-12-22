@@ -25,7 +25,9 @@ function Input({ value, icon, onChange, placeholder }: Props) {
 	);
 }
 
-const Wrapper = styled.span<{ $icon: boolean }>`
+const Wrapper = styled.div<{ $icon: boolean }>`
+	position: relative;
+
 	input {
 		border: 2px solid var(--color-grey-dark-1);
 		padding: 1rem;
@@ -41,9 +43,10 @@ const Wrapper = styled.span<{ $icon: boolean }>`
 		}
 	}
 
-	i {
+	svg {
 		position: absolute;
-		top: 0.6rem;
+		top: 0.8rem;
+		width: 2rem;
 		padding: 1rem;
 		z-index: 1;
 	}
