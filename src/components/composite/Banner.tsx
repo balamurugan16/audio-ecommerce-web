@@ -39,7 +39,7 @@ const Wrapper = styled.div`
 		button {
 			font-size: 1.5rem;
 			font-weight: bold;
-			letter-spacing: 0.2px;
+
 			padding: 0;
 		}
 	}

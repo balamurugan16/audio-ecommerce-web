@@ -15,7 +15,8 @@
 html {
 	box-sizing: border-box;
 	font-size: 10px;
-	background-color: var(--color-grey-light-2);
+	background-color: var(--color-white);
+	letter-spacing: 0.2px;
 }
 
 *,

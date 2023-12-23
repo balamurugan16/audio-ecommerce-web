@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import FeatherIcon, { type FeatherIcons } from "./FeatherIcon";
+import FeatherIcon from "./FeatherIcon";
 import { ChangeEventHandler } from "react";
+import { FeatherIconNames } from "feather-icons";
 
 type Props = {
 	value?: string;
 	placeholder?: string;
 	onChange?: ChangeEventHandler<HTMLInputElement>;
-	icon?: FeatherIcons;
+	icon?: FeatherIconNames;
 };
 
 function Input({ value, icon, onChange, placeholder }: Props) {

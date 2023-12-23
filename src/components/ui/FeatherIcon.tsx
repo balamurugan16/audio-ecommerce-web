@@ -1,10 +1,8 @@
-import feather from "feather-icons";
+import feather, { FeatherIconNames } from "feather-icons";
 import { useEffect } from "react";
 
-export type FeatherIcons = keyof typeof feather.icons;
-
 export type Props = {
-	icon: FeatherIcons;
+	icon: FeatherIconNames;
 	fill?: string;
 };
 

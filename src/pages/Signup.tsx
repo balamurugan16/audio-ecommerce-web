@@ -54,7 +54,6 @@ const Wrapper = styled.section`
 	flex-direction: column;
 	justify-content: space-around;
 	font-size: 1.4rem;
-	letter-spacing: 0.2px;
 
 	header {
 		text-align: center;
