@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 	div {
 		display: flex;
 		gap: 1.5rem;
-		font-size: 2rem;
+		font-size: 1.4rem;
 	}
 `;
 

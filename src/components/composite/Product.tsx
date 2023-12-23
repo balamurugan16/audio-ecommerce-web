@@ -9,7 +9,7 @@ type Props = {
 	img: string;
 	rating: number;
 	reviewCount: number;
-	price: string;
+	price: number;
 	orientation: Orientation;
 	showStats?: boolean;
 };
@@ -25,10 +25,10 @@ function Product({
 }: Props) {
 	return (
 		<Wrapper $orientation={orientation}>
-			<img src={img} alt={title} />
+			<img className="product-image" src={img} alt={title} />
 			<div className="content">
 				<h2 className="title">{title}</h2>
-				<h4 className="price">{price}</h4>
+				<h4 className="price">USD {price}</h4>
 				{showStats ? (
 					<div className="footer">
 						<span className="rating">
@@ -50,26 +50,31 @@ const Wrapper = styled.div<{ $orientation: Orientation }>`
 	display: flex;
 	flex-direction: ${(props) => props.$orientation};
 	max-width: ${(props) => (props.$orientation === "row" ? "30rem" : "15rem")};
-	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
 	padding: 1rem 1.5rem;
+	img.product-image {
+		width: ${(props) => (props.$orientation === "row" ? "50px" : "96px")};
+	}
 	.content {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		width: 100%;
 	}
 	.title {
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		font-weight: 400;
 	}
 	.price {
+		font-size: 1.4rem;
 		font-weight: 700;
 	}
 	.footer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		font-size: 1.2rem;
 		.rating {
 			display: flex;
 			align-items: center;

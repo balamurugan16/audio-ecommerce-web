@@ -28,12 +28,14 @@ const Wrapper = styled.div<{ $icon: boolean }>`
 	position: relative;
 
 	input {
-		border: 2px solid var(--color-grey-dark-1);
+		border: 2px solid var(--color-grey);
 		padding: 1rem;
 		padding-left: ${(props) => (props.$icon ? "4rem" : "1rem")};
 		border-radius: 5px;
 		position: relative;
-		color: var(--color-grey-dark-1);
+		color: var(--color-grey);
+		width: 100%;
+		box-sizing: border-box;
 
 		&:focus {
 			border: 2px solid var(--color-default);
@@ -44,7 +46,7 @@ const Wrapper = styled.div<{ $icon: boolean }>`
 	svg {
 		position: absolute;
 		width: 2rem;
-		padding: 1rem;
+		padding: 0.8rem;
 		z-index: 1;
 	}
 `;
