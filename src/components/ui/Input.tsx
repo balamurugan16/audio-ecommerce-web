@@ -1,22 +1,20 @@
 import styled from "styled-components";
 import FeatherIcon from "./FeatherIcon";
-import { ChangeEventHandler } from "react";
+import { ComponentProps } from "react";
 import { FeatherIconNames } from "feather-icons";
 
 type Props = {
-	value?: string;
-	placeholder?: string;
-	onChange?: ChangeEventHandler<HTMLInputElement>;
 	icon?: FeatherIconNames;
-};
+} & ComponentProps<"input">;
 
-function Input({ value, icon, onChange, placeholder }: Props) {
+function Input({ value, icon, onChange, placeholder, ...props }: Props) {
 	return (
 		<Wrapper $icon={!!icon}>
 			{icon ? (
 				<FeatherIcon icon={icon} fill="var(--color-grey-dark-1)" />
 			) : null}
 			<input
+				{...props}
 				type="text"
 				placeholder={placeholder}
 				value={value}

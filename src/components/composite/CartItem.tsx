@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 type Props = {
 	title: string;
 	img: string;
-	price: string;
+	price: number;
 	quantity: number;
 	onChange?: (qty: number) => void;
 };
@@ -24,7 +24,7 @@ function CartItem({ img, title, price, quantity: qty, onChange }: Props) {
 			<img src={img} alt={title} />
 			<div className="content">
 				<h2 className="title">{title}</h2>
-				<h4 className="price">{price}</h4>
+				<h4 className="price">USD {price}</h4>
 				<div className="footer">
 					<div className="quantity">
 						<button

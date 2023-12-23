@@ -3,6 +3,7 @@ import FeatherIcon from "../components/ui/FeatherIcon";
 import Avatar from "../components/ui/Avatar";
 import img from "../assets/385172.jpg";
 import { Fragment } from "react";
+import Header from "../components/ui/Header";
 
 const settings = [
 	{
@@ -78,14 +79,6 @@ const Hero = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
-`;
-
-const Header = styled.header`
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	text-align: center;
-	align-items: center;
-	font-size: 1.6rem;
 `;
 
 const UserBadge = styled.section`
