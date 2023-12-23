@@ -18,9 +18,7 @@ function Signup() {
 				<form>
 					<Input icon="mail" placeholder="Email" />
 					<Input icon="lock" placeholder="Password" />
-					<div>
-						<Button variant="filled">Sign up</Button>
-					</div>
+					<Button variant="filled">Sign up</Button>
 				</form>
 				<div className="actions">
 					<div className="social-media">
@@ -36,7 +34,7 @@ function Signup() {
 					</div>
 					<p>
 						If you have an account?{" "}
-						<Link className="link" to="/signup">
+						<Link className="link" to="/signin">
 							Sign In here
 						</Link>
 					</p>
@@ -76,6 +74,7 @@ const Wrapper = styled.section`
 		form {
 			display: flex;
 			flex-direction: column;
+			gap: 1rem;
 		}
 		.actions {
 			display: flex;

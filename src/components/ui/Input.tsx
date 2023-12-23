@@ -32,7 +32,6 @@ const Wrapper = styled.div<{ $icon: boolean }>`
 		border: 2px solid var(--color-grey-dark-1);
 		padding: 1rem;
 		padding-left: ${(props) => (props.$icon ? "4rem" : "1rem")};
-		margin: 1rem 0;
 		border-radius: 5px;
 		position: relative;
 		color: var(--color-grey-dark-1);
@@ -45,7 +44,6 @@ const Wrapper = styled.div<{ $icon: boolean }>`
 
 	svg {
 		position: absolute;
-		top: 0.8rem;
 		width: 2rem;
 		padding: 1rem;
 		z-index: 1;

@@ -14,20 +14,20 @@ const variants = {
 
 export default function Button({ children, icon, variant = "default" }: Props) {
 	return (
-		<StyledButton className={variant}>
+		<StyledButton className={variant} $hasIcon={!!icon}>
 			{children}
 			{icon ? <FeatherIcon icon={icon} /> : null}
 		</StyledButton>
 	);
 }
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<{ $hasIcon: boolean }>`
 	border: none;
 	border-radius: 10px;
 	padding: 1rem 2rem;
 	font-weight: bolder;
 	display: flex;
-	justify-content: space-between;
+	justify-content: ${(props) => (props.$hasIcon ? "space-between" : "center")};
 	align-items: center;
 
 	&.filled {
