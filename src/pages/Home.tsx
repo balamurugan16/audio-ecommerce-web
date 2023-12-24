@@ -6,9 +6,9 @@ import img from "../assets/385172.jpg";
 import Input from "../components/ui/Input";
 import Banner from "../components/composite/Banner";
 import headphones from "../assets/headphones.png";
-import Product from "../components/composite/Product";
 import Badge from "../components/ui/Badge";
 import { Fragment } from "react";
+import ProductShowcase from "../components/composite/ProductShowcase";
 
 function Home() {
 	const username = "Hinata";
@@ -37,38 +37,35 @@ function Home() {
 					<Banner img={headphones} title="TMA-2 Modular Headphone" />
 					<Banner img={headphones} title="TMA-2 Modular Headphone" />
 				</div>
-				<FeaturedProducts>
-					<div className="card-header">
-						<p>Featured Products</p>
-						<span>See all</span>
-					</div>
-					<div className="products">
-						<Product
-							orientation="column"
-							img={headphones}
-							title="TMA-2 HD Wireless"
-							price={350}
-							rating={1}
-							reviewCount={2}
-						/>
-						<Product
-							orientation="column"
-							img={headphones}
-							title="TMA-2 HD Wireless"
-							price={350}
-							rating={1}
-							reviewCount={2}
-						/>
-						<Product
-							orientation="column"
-							img={headphones}
-							title="TMA-2 HD Wireless"
-							price={350}
-							rating={1}
-							reviewCount={2}
-						/>
-					</div>
-				</FeaturedProducts>
+				<ProductShowcase
+					title="Featured Products"
+					products={[
+						{
+							img: headphones,
+							orientation: "row",
+							price: 349,
+							rating: 0,
+							reviewCount: 0,
+							title: "TMA-3 HD Wireless",
+						},
+						{
+							img: headphones,
+							orientation: "row",
+							price: 349,
+							rating: 0,
+							reviewCount: 0,
+							title: "TMA-3 HD Wireless",
+						},
+						{
+							img: headphones,
+							orientation: "row",
+							price: 349,
+							rating: 0,
+							reviewCount: 0,
+							title: "TMA-3 HD Wireless",
+						},
+					]}
+				/>
 			</Showcase>
 		</Fragment>
 	);
@@ -110,25 +107,6 @@ const Showcase = styled.section`
 		flex-direction: row;
 		gap: 1rem;
 		overflow-x: auto;
-	}
-`;
-
-const FeaturedProducts = styled.section`
-	margin: 2rem 0;
-	.card-header {
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 2rem;
-		font-size: 1.4rem;
-		p {
-			font-size: 1.2rem;
-		}
-	}
-	.products {
-		display: flex;
-		flex-direction: row;
-		overflow-x: auto;
-		gap: 1rem;
 	}
 `;
 
