@@ -10,7 +10,7 @@ function Badge({ title, filled = false }: Props) {
 }
 
 const StyledBadge = styled.span<{ $filled?: boolean }>`
-	padding: 0.5rem;
+	padding: 0.5rem 1rem;
 	border-radius: 30px;
 	background-color: ${(props) =>
 		props.$filled ? "var(--color-primary)" : "transparent"};

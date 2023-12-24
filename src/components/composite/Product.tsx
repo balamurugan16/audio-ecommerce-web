@@ -49,7 +49,7 @@ const Wrapper = styled.div<{ $orientation: Orientation }>`
 	border-radius: 1rem;
 	display: flex;
 	flex-direction: ${(props) => props.$orientation};
-	max-width: ${(props) => (props.$orientation === "row" ? "30rem" : "15rem")};
+	min-width: ${(props) => (props.$orientation === "row" ? "30rem" : "11.5rem")};
 	align-items: center;
 	gap: 0.5rem;
 	padding: 1rem 1.5rem;
@@ -63,11 +63,11 @@ const Wrapper = styled.div<{ $orientation: Orientation }>`
 		width: 100%;
 	}
 	.title {
-		font-size: 1.6rem;
+		font-size: 1.2rem;
 		font-weight: 400;
 	}
 	.price {
-		font-size: 1.4rem;
+		font-size: 1.2rem;
 		font-weight: 700;
 	}
 	.footer {
