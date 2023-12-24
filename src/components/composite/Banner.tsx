@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 	display: flex;
 	width: 100%;
 	gap: 1rem;
-	padding: k2rem;
+	padding: 2rem;
 	border-radius: 1rem;
 
 	div {
